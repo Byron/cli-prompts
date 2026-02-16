@@ -130,7 +130,7 @@ where
             let key_pressed = engine.read_key()?;
             if matches!(
                 key_pressed,
-                Key::Ctrl('c') | Key::Ctrl('C') | Key::Ctrl('\u{3}') | Key::Char('\u{3}')
+                Key::Ctrl('c') | Key::Ctrl('C')
             ) {
                 return Err(AbortReason::Interrupt);
             }

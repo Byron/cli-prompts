@@ -217,9 +217,6 @@ impl From<KeyEvent> for Key {
     fn from(key_event: KeyEvent) -> Self {
         if key_event.modifiers.contains(KeyModifiers::CONTROL) {
             if let crossterm::event::KeyCode::Char(c) = key_event.code {
-                if c == '\u{3}' {
-                    return Key::Ctrl('c');
-                }
                 return Key::Ctrl(c);
             }
         }
